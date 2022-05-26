@@ -26,11 +26,15 @@ Navbar component scaffolding set up as a separate component as it will be used o
 
 ### `Fetching Recipe Data`
 
-Fetching recipe data
+Fetching recipe data using the `useFetch` custom hook I previously created for working with differect projects.
+
+Added the hook and tested successfully mapping data to the homepage.
 
 ### `Recipe List Component`
 
-Recipe List Component
+Make a separate component to list out all the recipes and then nest this component on the homepage. I'm doing this for 2 reasons:
+1 keep homepage component leaner and more module
+2 can re-use the recipe component elsewhere in the futue
 
 ### `Fetching Single Recipe`
 
