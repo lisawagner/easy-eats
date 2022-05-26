@@ -16,11 +16,13 @@ The initial recipe data will be saved in a db.json file, for seeding a database 
 
 ### `Pages + Routes`
 
-Pages and Routes
+Site pages folder structured to keep pages with multiple components per page all in one folder, along with their style sheets.
+
+React-router-dom v6 installed and base routes set up and tested.
 
 ### `Navbar Component`
 
-Navbar component
+Navbar component scaffolding set up as a separate component as it will be used on each page. [TODO: Add Layout component].
 
 ### `Fetching Recipe Data`
 
