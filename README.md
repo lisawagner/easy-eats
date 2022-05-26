@@ -2,7 +2,7 @@
 
 Concept site: Home cooking, easy and quick recipes.
 
-## Project Scope Details
+## Project Scope
 
 On the landing page, viewers can immediately see recipe cards. No need to dig through long-winded ad copy to locate the desired recipe. When the user clicks on one of the recipe cards, it takes them to a detailed component page, with all the ingredients and recipe details.
 
