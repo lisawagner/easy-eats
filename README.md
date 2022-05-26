@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Easy Eats - Simple Recipe App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Concept site: Home cooking, easy and quick recipes.
 
-## Available Scripts
+## Project Scope Details
 
-In the project directory, you can run:
+On the landing page, viewers can immediately see recipe cards. No need to dig through long-winded ad copy to locate the desired recipe. When the user clicks on one of the recipe cards, it takes them to a detailed component page, with all the ingredients and recipe details.
 
-### `npm start`
+New recipes can be added easily with the 'new recipe' component. (Todo: add auth routes so only subscribed users can add recipes. Any site viewer can see the completed cards and details to make Easy Eats recipes, subscription req'd for adding new recipes.)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The new recipes component will also feature an easy way to add ingredients to the recipe card.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+There will also be a search recipes component, a light and dark mode option and a colour theme picker for the site. Using the Context API and reducers to make this possible.
 
-### `npm test`
+The initial recipe data will be saved in a db.json file, for seeding a database later in Firestore, scalable NoSQL cloud database. During the early development stage I'll use json-server for development and testing.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `Pages + Routes`
 
-### `npm run build`
+Pages and Routes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `Navbar Component`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Navbar component
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `Fetching Recipe Data`
 
-### `npm run eject`
+Fetching recipe data
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `Recipe List Component`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Recipe List Component
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### `Fetching Single Recipe`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Fetching single recipe
 
-## Learn More
+### `Recipe Details Template`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Recipe Details Template
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `Form for Creating Recipes`
 
-### Code Splitting
+Form for Creating Recipes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### `Adding Ingredients`
 
-### Analyzing the Bundle Size
+Adding Ingredients
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### `Making a POST Request`
 
-### Making a Progressive Web App
+POST Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### `Redirecting the User`
 
-### Advanced Configuration
+Redirecting User
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### `Adding Searchbar`
 
-### Deployment
+Adding Searchbar
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### `Search Results Page`
 
-### `npm run build` fails to minify
+Search Results
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### `Finishing Touches + TODOs`
+
+Finishing Touches
+
