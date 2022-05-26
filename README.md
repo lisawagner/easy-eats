@@ -32,7 +32,7 @@ Added the hook and tested successfully mapping data to the homepage.
 
 ### `Recipe List Component`
 
-Make a separate component to list out all recipes and nest this component on the homepage. I'm creating this for 2 reasons:
+Make a separate component to list out all recipes and nest this component on the homepage. I am setting up the `<RecipeList>` component this way for 2 reasons:
 1. To keep the homepage component leaner and more modular
 2. In order to re-use the recipe component elsewhere in the future
 
