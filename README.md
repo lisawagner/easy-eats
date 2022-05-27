@@ -95,4 +95,5 @@ Finishing Touches
 - TODO: add light and dark mode selector
 - TODO: add theme changer selectors
 - TODO: add responsiveness
+- TODO: clear search item from search bar after search complete
 

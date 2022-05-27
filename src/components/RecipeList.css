@@ -1,9 +1,10 @@
 .recipe-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 40px;
-  max-width: 1200px;
-  margin: 40px auto;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  /* max-width: 1200px; */
+  max-width: 100%;
+  margin: 20px;
 }
 .recipe-list .card {
   background: #fff;
@@ -43,4 +44,16 @@
   padding: 8px;
   border-radius: 4px;
   margin: 20px auto 0;
+}
+
+@media (min-width: 768px) {
+  .recipe-list {
+    grid-template-columns: 1fr 1fr;
+  } 
+}
+
+@media (min-width: 1024px) {
+  .recipe-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  } 
 }

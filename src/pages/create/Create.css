@@ -1,7 +1,9 @@
 .create {
+  display: flex;
+  flex-direction: column;
   color: #555;
-  max-width: 480px;
-  margin: 60px auto;
+  max-width: 260px;
+  margin: 20px auto;
 }
 .create label span {
   display: block;
@@ -30,4 +32,28 @@
 }
 .ingredients button {
   margin: 0 0 0 10px;
+}
+
+@media (min-width: 375px) {
+  .create {
+    max-width: 360px;
+    margin: 20px auto;
+  }
+}
+
+@media (min-width: 540px) {
+  .create {
+    max-width: 480px;
+    margin: 30px auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .create {
+    margin: 40px auto;
+  }
+}
+
+@media (min-width: 1024) {
+
 }
