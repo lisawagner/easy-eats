@@ -7,7 +7,8 @@
   margin: 20px;
 }
 .recipe-list .card {
-  background: #fff;
+  /* background: #fff; */
+  background: antiquewhite;
   color: #333;
   padding: 20px;
   border-radius: 4px;
@@ -44,6 +45,15 @@
   padding: 8px;
   border-radius: 4px;
   margin: 20px auto 0;
+}
+.recipe-list .pattern {  
+	height: 80%;  
+  /* padding-right: 3px; */
+	background-image: repeating-linear-gradient(antiquewhite 0px, antiquewhite 30px, teal 31px);
+}
+.recipe-list .vintageFx {
+  box-shadow:0px 0px 12px 0px rgba(0,0,0,0.4), inset 0px 0px 10px 3px #7b6148;
+  /* border-radius: 4px; */
 }
 
 @media (min-width: 768px) {

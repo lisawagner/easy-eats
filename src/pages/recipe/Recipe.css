@@ -4,9 +4,11 @@
   /* display: flex; */
   margin: 20px;
   /* text-align: center; */
-  background: #fff;
+  /* background: #fff; */
+  background: #faebd7;
   padding: 20px;
   box-sizing: border-box;
+  border-radius: 4px;
 }
 .recipe ul {
   display: flex;
@@ -27,10 +29,21 @@
 .recipe li:last-child::after {
   content: ".";
 }
-.instructions {
+.recipe .instructions {
   text-align: left;
   line-height: 1.5em;
 }
+/* horizontal lines */
+.recipe .pattern {
+  padding: 10px;
+	background-image: repeating-linear-gradient(antiquewhite 0px, antiquewhite 30px, teal 31px);
+}
+.recipe.vintageFx {
+  box-shadow:0px 0px 20px 0px rgba(0,0,0,0.4), inset 0px 0px 14px 2px #7b6148;
+  z-index: 9;
+}
+
+
 
 @media (min-width: 1024px) {
   .recipe {
