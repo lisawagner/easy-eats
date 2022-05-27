@@ -9,6 +9,7 @@ export default function Recipe() {
   const { data: recipe, isPending, error } = useFetch(URL)
 
   return (
+    <div className="recipe-container">
     <div className='recipe vintageFx'>
       <div className="pattern">
         {error && <p className='error' >{error}</p>}
@@ -16,7 +17,7 @@ export default function Recipe() {
         {recipe && (
           <>
             <h2 className='page-title'>{recipe.title}</h2>
-            <p>Takes {recipe.cookingTime} to cook.</p>
+            <p className='cook-time'>Takes {recipe.cookingTime} to cook.</p>
             <ul>
               {recipe.ingredients.map( (ingredient) => (
                 <li key={ingredient}>{ingredient}</li>
@@ -26,6 +27,7 @@ export default function Recipe() {
           </>
         )}
       </div>
+    </div>
     </div>
   )
 }

@@ -1,3 +1,6 @@
+.recipe-container {
+  padding-bottom: 1em;
+}
 .recipe {
   /* max-width: 1200px; */
   max-width: 100vw;
@@ -10,17 +13,21 @@
   box-sizing: border-box;
   border-radius: 4px;
 }
+/* .recipe .cook-time {
+  margin: 0.5em auto;
+} */
 .recipe ul {
   display: flex;
   flex-direction: column;
   padding: 0;
   justify-content: center;
-  margin-top: 0;
+  margin-top: 1.4em;
 }
 .recipe li {
   /* list-style-type: none; */
   /* margin-right: 10px; */
   margin-left: 30px;
+  line-height: 1.4em;
   color: #777;
 }
 .recipe li::after {
@@ -31,15 +38,16 @@
 }
 .recipe .instructions {
   text-align: left;
-  line-height: 1.5em;
+  line-height: 1.4em;
+  margin-top: 1.5em;
 }
 /* horizontal lines */
 .recipe .pattern {
   padding: 10px;
-	background-image: repeating-linear-gradient(antiquewhite 0px, antiquewhite 30px, teal 31px);
+	background-image: repeating-linear-gradient(antiquewhite 0px, antiquewhite 35px, teal 36px);
 }
 .recipe.vintageFx {
-  box-shadow:0px 0px 20px 0px rgba(0,0,0,0.4), inset 0px 0px 14px 2px #7b6148;
+  box-shadow:0px 0px 20px 0px rgba(0,0,0,0.4), inset 0px 0px 14px 2px #422407;
   z-index: 9;
 }
 

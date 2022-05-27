@@ -20,8 +20,13 @@ export default function RecipeList({ recipes }) {
                 <p>{recipe.cookingTime} to make</p>
                 {/* add snippet substring to grab characters from zero to 100*/}
                 <div>{recipe.instructions.substring(0, 100)}...</div>
-                <Link to={`/recipes/${recipe.id}`}>Cook this</Link>
-              
+                <Link
+                  to={`/recipes/${recipe.id}`}
+                  className='ribbon ribbon-top-right'
+                  >
+                    <span>Make it!</span>
+                  </Link>
+
             </div>
           {/* </div> */}
         </div>

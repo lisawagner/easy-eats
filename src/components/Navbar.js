@@ -8,7 +8,7 @@ export default function Navbar() {
       <nav>
         <NavLink to='/' className="brand" ><h1>Easy Eats</h1></NavLink>
         <Searchbar />
-        <NavLink to='/create' className='btn'>Create Recipe</NavLink>
+        <NavLink to='/create' className='btn'>Add Recipe</NavLink>
       </nav>
     </div>
   )

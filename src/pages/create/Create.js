@@ -51,7 +51,8 @@ export default function Create() {
   }
 
   return (
-    <div className='create' >
+    <div className="create-wrap">
+    <div className='create vintageFx' >
       <h2 className='page-title'>Add a New Recipe</h2>
       <form onSubmit={handleSubmit} >
         <label>
@@ -102,6 +103,7 @@ export default function Create() {
         <button className="btn">submit</button>
 
       </form>
+    </div>
     </div>
   )
 }
