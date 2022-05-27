@@ -36,25 +36,43 @@ Make a separate component to list out all recipes and nest this component on the
 1. To keep the homepage component leaner and more modular
 2. In order to re-use the recipe component elsewhere in the future
 
-### `Fetching Single Recipe`
+Added the component and tested. While testing found and fixed a routing. `<RecipeList>` component works as intended.
 
-Fetching single recipe
+[TODO: add responive/mobile first css]
+
+### `Fetch Single Recipe`
+
+Fetched single recipe with the `<useParams>` hook to populate the Recipe page.
 
 ### `Recipe Details Template`
 
-Recipe Details Template
+Built out the recipe details on the Recipe page. Mapped over the ingredients list and gave it a key, since the json db doesn't contain unique keys for these items.
 
 ### `Form for Creating Recipes`
 
-Form for Creating Recipes
+Form for Creating Recipes. Created 3 different states for 3 different pieces of data (title, instructions and cooking time) using `<useState>` hook. Tested the form functionality in the console and added some basic styles.
 
-### `Adding Ingredients`
+### `Adding Ingredients Field`
 
-Adding Ingredients
+Here, the user needs to be able to add multiple input items, which then need to go into an ingredients array, so coding this process is more involved.
+
+To create this, I set up a useState for each single ingredient entered, and a useState array to hold all the ingredients values. Once the user enters an ingredient, a quick check for duplicates runs (we don't need duplicate ingredients) and then the new ingredient is added to the array along with any previous ingredients, if applicable.
+
+The input field is then cleared, so that more entries can be made by the user. For this we use the `<useRef>` hook. We use the useRef hook to get a handle on the correct DOM element. Once we have that element, we can use the focus method on it to focus the field for better UI/UX.
+
+[TODO: found a bug - duplicates check is not case sensitive. User can add 'eggs' and 'Eggs' for example.] *Solution:* to handle the duplicates, I've set the data entry field `toLowerCase()` for the ingredients so that the string comparison can easily catch duplicates. When the list is repopulated back to the DOM, it will be styled into title case for a better user experience.
+
+Added a listing of ingredients already added underneath the input, to make it easier for the user to see preview what input they already included.
 
 ### `Making a POST Request`
 
-POST Request
+Now it's time to create a `POST` request to add the new recipe information to our json file ('database'). JSON-Server allows us to do this, but requires some additional configuration inside the `<useFetch>` custom hook.
+
+I added a default GET method to useFetch and created a postData function to save the input within a fetch options object in a JSON.stringify format. The next step is to trigger the fetch request with these options. This is because the POST fetch method here needs the options to have values prior to triggering.
+
+Imported the newly configured useFetch into the Create recipe page. Added in the functionality and tested. The configuration works as intended.
+
+[TODO: add 'edit' ability to recipe cards]
 
 ### `Redirecting the User`
 

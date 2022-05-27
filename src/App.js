@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // page components
 import Navbar from './components/Navbar'
@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/create" element={<Create />} />
           <Route path="/search" element={<Search />} />
-          <Route path="/recipe/:id" element={<Recipe />} />
+          <Route path="/recipes/:id" element={<Recipe />} />
           {/* Wildcard route sends you home (or 404) */}
           <Route path="*" element={<Home />} />
         </Routes>
