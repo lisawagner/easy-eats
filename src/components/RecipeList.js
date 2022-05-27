@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom'
 import './RecipeList.css'
 
 export default function RecipeList({ recipes }) {
+  // If array empty, return this template
+  if(recipes.length === 0) {
+    return <div className='error' >No recipes to load...</div>
+  }
+
   return (
     <div className='recipe-list'>
       {/* we already have the recipes sent in from homepage props, so we don't need to do the recipes && check before mapping*/}

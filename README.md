@@ -74,19 +74,25 @@ Imported the newly configured useFetch into the Create recipe page. Added in the
 
 [TODO: add 'edit' ability to recipe cards]
 
-### `Redirecting the User`
+### `Redirect the User`
 
-Redirecting User
+Redirect the user after they have submitted a new recipe (POST request). Because it takes time to send the POST request data to json-server, I need to make the redirect after the POST request submission is fully complete.
 
-### `Adding Searchbar`
+I added a `useEffect` to check if there was data, then added a 2 second timer to wait before invoking `useNavigate()` to redirect to the home page.
 
-Adding Searchbar
+### `Add Searchbar`
+
+Searchbar created as a form submission to send the user to a Search results page with their query. `useNavigate()` incorporated to redirect the user.
 
 ### `Search Results Page`
 
-Search Results
+For the Search results page, I'm using `useLocation()` from react-router-dom and `URLSearchParams` from plain vanilla javascript to create a `new URLSearchParams` object based on the query string that we grab. This allows the use `GET method` on the search parameters.
 
 ### `Finishing Touches + TODOs`
 
 Finishing Touches
+- added a test for empty arrays in the SearchList that returns an indicator when there are no recipes matching a specific search query.
+- TODO: add light and dark mode selector
+- TODO: add theme changer selectors
+- TODO: add responsiveness
 

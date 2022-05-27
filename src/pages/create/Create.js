@@ -1,5 +1,6 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { useFetch } from '../../hooks/useFetch'
+import { useNavigate } from 'react-router-dom'
 import './Create.css'
 
 export default function Create() {
@@ -9,9 +10,19 @@ export default function Create() {
   const [newIngredient, setNewIngredient] = useState('')
   const [ingredients, setIngredients] = useState([])
   const ingredientInput = useRef(null)
+  const history = useNavigate()
 
   // api endpoint - since "GET" is default, we pass in "POST" to use it instead
   const { postData, data, error } = useFetch('http://localhost:3000/recipes', 'POST')
+
+  // redirect to home page if we have a data response
+  useEffect(() => {
+    if (data) {
+      setTimeout(() => {
+        history('/')
+      }, 2000)
+    } 
+  }, [data, history])
 
   const handleSubmit = (e) => {
     // pervent default of page resubmitting

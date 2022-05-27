@@ -50,6 +50,28 @@
       "instructions": "While pan heats up to medium, crack 2 eggs into a mixing bowl. Add shredded cheese, chopped green onion, and salt 'n pepper to taste. Mix with and when pan is warm, add mixture to pan. Cook for 5 minutes",
       "cookingTime": "10 minutes",
       "id": "4Vj7B5e"
+    },
+    {
+      "title": "Slow Cooker Pork Loin",
+      "ingredients": [
+        "1 cup chicken broth",
+        "1 pork tenderloin",
+        "1 chopped onion",
+        "1/2 can beer"
+      ],
+      "instructions": "Add pork loin and all ingredients to slow cooker. Make sure lid is secure. Turn slow cooker onto high setting. Cook for 3-4 hours, until internal temperature of pork is 160 degrees fahrenheit.",
+      "cookingTime": "239 minutes",
+      "id": "QR7-Qkf"
+    },
+    {
+      "title": "Morning Coffee",
+      "ingredients": [
+        "1 heaping tsp. of instant coffee",
+        "1 cup of homogenized milk"
+      ],
+      "instructions": "Boil a kettle of water. Add instant coffee to tumbler. When water boils, add a cup and a half to tumbler. Top up with 1 cup homogenized milk and enjoy!",
+      "cookingTime": "5 minutes",
+      "id": "034pvUE"
     }
   ]
 }
