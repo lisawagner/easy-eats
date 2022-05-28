@@ -124,6 +124,9 @@ As logic becomes more complex, reducers are also a great option. It is a single 
 Tested out useReducer by building a simple colour change state reducer.
 
 ### `Theme Color Selector`
+Added color theme selector button and swatches component.
+
+[TODO: build out theme arrays with primary color, secondary, etc and with different background patterns and font choices]
 
 
 ### `Light & Dark Modes`
