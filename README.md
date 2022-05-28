@@ -6,7 +6,9 @@ Concept site: Home cooking, easy and quick recipes.
 
 On the landing page, viewers can immediately see recipe cards. No need to dig through long-winded ad copy to locate the desired recipe. When the user clicks on one of the recipe cards, it takes them to a detailed component page, with all the ingredients and recipe details.
 
-New recipes can be added easily with the 'new recipe' component. (Todo: add auth routes so only subscribed users can add recipes. Any site viewer can see the completed cards and details to make Easy Eats recipes, subscription req'd for adding new recipes.)
+New recipes can be added easily with the 'new recipe' component. Site viewers can see the completed cards and details to make Easy Eats recipes, - add login req'd for adding new recipes.
+
+[Todo: add auth routes so only subscribed users can add recipes.]
 
 The new recipes component will also feature an easy way to add ingredients to the recipe card.
 
@@ -22,7 +24,9 @@ React-router-dom v6 installed and base routes set up and tested.
 
 ### `Navbar Component`
 
-Navbar component scaffolding set up as a separate component as it will be used on each page. [TODO: Add Layout component].
+Navbar component scaffolding set up as a separate component as it will be used on each page.
+
+[TODO: Add Layout component]
 
 ### `Fetching Recipe Data`
 
@@ -37,8 +41,6 @@ Make a separate component to list out all recipes and nest this component on the
 2. In order to re-use the recipe component elsewhere in the future
 
 Added the component and tested. While testing found and fixed a routing. `<RecipeList>` component works as intended.
-
-[TODO: add responive/mobile first css]
 
 ### `Fetch Single Recipe`
 
@@ -94,6 +96,23 @@ Finishing Touches
 - added a test for empty arrays in the SearchList that returns an indicator when there are no recipes matching a specific search query.
 - TODO: add light and dark mode selector
 - TODO: add theme changer selectors
-- TODO: add responsiveness
 - TODO: clear search item from search bar after search complete
 
+### `Context API`
+
+The Context API provider offers a way to manage props without having to do prop drilling. Just because we can use this global state, doesn't mean we always should. Using alot of global state can lead to unneccessary re-renders.
+
+Any component that consumes a context will re-render anytime data in that context changes. A bit of prop drilling isn't a bad thing.
+
+### `Creating a Context & Provider`
+ Bundled custom <ThemeProvider> around the app. This is to allow the addition of custom logic. 
+
+### `useContext`
+The `useContext` hook accepts an object and returns the current context value for that context. When the context provider updates, this hook will trigger a r-erender with the latest context value.
+
+The re-render will occur even if an ancestor uses React.memo or `shouldComponentUpdate`.
+
+### `Custom Context Hook`
+Created a custom `useTheme` hook to reduce the amount of code written in the components and to allow for additional functionality.
+
+### `Reducers and useReducer`
