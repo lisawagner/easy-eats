@@ -116,3 +116,16 @@ The re-render will occur even if an ancestor uses React.memo or `shouldComponent
 Created a custom `useTheme` hook to reduce the amount of code written in the components and to allow for additional functionality.
 
 ### `Reducers and useReducer`
+
+When working with context and complex states and different ways of updating states, a reducer is a good option. It is a function that makes it easier to work with multiple bits of related state that can be updated in different ways.
+
+As logic becomes more complex, reducers are also a great option. It is a single function that encapsulates all the logic we need to update state values in multiple ways.
+
+Tested out useReducer by building a simple colour change state reducer.
+
+### `Theme Color Selector`
+
+
+### `Light & Dark Modes`
+
+### `Light & Dark Mode Styles`
