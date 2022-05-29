@@ -167,10 +167,16 @@ Set up:
 ### `Connect to Firestore`
 Connect the Frontend application with the Backend Firebase cloud database.
   1. Install local firebase package into project
+  2. Create hidden firebase config file and connect to firebase firestore
 
 ### `Fetch Firestore Collection`
+Remove the local json-server database references and replace with Cloud Firebase. Successfully fetched the firestore recipes collection from the cloud to the frontend Homepage.
+
+[TODO: Create a new useFetch custom hook for fetching data from Firebase]
+[TODO: Update UI to titlecase for the results from 'title' and 'cookingTime']
 
 ### `Fetch Firestore Document`
+
 
 ### `Add Firestore Document`
 

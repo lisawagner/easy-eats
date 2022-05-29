@@ -1,4 +1,7 @@
-import { useFetch } from '../../hooks/useFetch'
+import { useEffect, useState } from 'react'
+
+import { db } from '../../firebase/config'
+import { collection, getDocs } from 'firebase/firestore'
 
 // components
 import RecipeList from '../../components/RecipeList'
@@ -7,7 +10,55 @@ import RecipeList from '../../components/RecipeList'
 import './Home.css'
 
 export default function Home() {
-  const { data, isPending, error } = useFetch('http://localhost:3000/recipes')
+  const [data, setData] = useState(null)
+  const [isPending, setIsPending] = useState(false)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    const ref = collection (db, 'recipes')
+    setIsPending(true)
+
+    getDocs(ref).then((snapshot) => {
+      console.log("snapshot: " + snapshot);
+
+      if (snapshot.empty) {
+        setError('Sorry, there are no recipes to load at the moment')
+        setIsPending(false)
+      } else {
+        let results = []
+        snapshot.docs.forEach((doc) => {
+        console.log(doc)
+        results.push({id: doc.id, ...doc.data()})
+      })
+      setData(results)
+      setIsPending(false)
+      }
+    }).catch((err) => {
+      setError(err.message)
+      setIsPending(false)
+    })
+
+    // db.collection('recipes').get().then((snapshot) => {
+    //   console.log(snapshot)
+    //   if (snapshot.empty) {
+    //     setError('No recipes to load')
+    //     setIsPending(false)
+    //   } else {
+    //     let results = []
+    //     snapshot.docs.forEach(doc => {
+    //       // console.log(doc)
+    //       results.push({ ...doc.data(), id: doc.id })
+    //     })
+    //     setData(results)
+    //     setIsPending(false)
+    //   }
+    // }).catch(err => {
+    //   setError(err.message)
+    //   setIsPending(false)
+    // })
+
+
+  }, [])
 
   return (
     <div className='home'>
