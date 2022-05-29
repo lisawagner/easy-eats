@@ -1,7 +1,11 @@
 import { useRef, useState, useEffect } from 'react'
 import { useFetch } from '../../hooks/useFetch'
 import { useNavigate } from 'react-router-dom'
+import { useTheme } from '../../hooks/useTheme'
+
+// styles
 import './Create.css'
+
 
 export default function Create() {
   const [title, setTitle] = useState('')
@@ -11,6 +15,7 @@ export default function Create() {
   const [ingredients, setIngredients] = useState([])
   const ingredientInput = useRef(null)
   const history = useNavigate()
+  const { color, mode } = useTheme()
 
   // api endpoint - since "GET" is default, we pass in "POST" to use it instead
   const { postData, data, error } = useFetch('http://localhost:3000/recipes', 'POST')
@@ -52,7 +57,7 @@ export default function Create() {
 
   return (
     <div className="create-wrap">
-    <div className='create vintageFx' >
+    <div className={`create vintageFx ${mode}`} >
       <h2 className='page-title'>Add a New Recipe</h2>
       <form onSubmit={handleSubmit} >
         <label>
@@ -76,7 +81,13 @@ export default function Create() {
               value={newIngredient}
               ref={ingredientInput}
             />
-            <button className="btn" onClick={handleAdd} >add</button>
+            <button
+              className="btn"
+              onClick={handleAdd}
+              style={{ background: color }}
+              >
+                add
+            </button>
           </div>
         </label>
         {/* display current ingredients list */}
@@ -99,9 +110,7 @@ export default function Create() {
             required
             />
         </label>
-
-        <button className="btn">submit</button>
-
+        <button className="btn" style={{ background: color }}>submit</button>
       </form>
     </div>
     </div>

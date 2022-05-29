@@ -4,7 +4,7 @@ import { useTheme } from '../hooks/useTheme'
 import './RecipeList.css'
 
 export default function RecipeList({ recipes }) {
-  const { color, mode } = useTheme()
+  const { mode } = useTheme()
 
   // If array empty, return this template
   if(recipes.length === 0) {

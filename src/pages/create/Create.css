@@ -11,7 +11,7 @@
   margin: 20px auto;
   padding: 30px 20px;
   /* padding: 30px 40px; */
-  background: antiquewhite;
+  background: var(--secondary-white);
   border-radius: 4px;
 }
 .create.vintageFx {
@@ -45,6 +45,14 @@
 .ingredients button {
   margin: 0 0 0 10px;
 }
+
+/* DARK MODE */
+
+.create.dark {
+  background: var(--primary-white);
+}
+
+/* MEDIA QUERIES */
 
 @media (min-width: 375px) {
   .create {
