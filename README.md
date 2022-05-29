@@ -3,12 +3,12 @@
 Concept site: Home cooking, easy and quick recipes.
 
 ### Features
-- Users can view and create new recipe cards
-- Dark and light mode toggle
-- Theme selector buttons
-- Search recipes component
-- Add recipes ability
-- Custom hooks: `useFetch` for GET & POST data, `useTheme` for theme context
+- Users can view and create new recipe cards :heavy_check_mark:
+- Dark and light mode toggle :heavy_check_mark:
+- Theme selector buttons :heavy_check_mark:
+- Search recipes component :heavy_check_mark:
+- Add recipes ability (CRUD - once the edit & delete set up)
+- Custom hooks: `useFetch` for GET & POST data, `useTheme` for theme context :heavy_check_mark:
 
 ### Technology
 
@@ -17,13 +17,13 @@ Concept site: Home cooking, easy and quick recipes.
 - JSON Server: Initial dev server
 - Google Firebase BaaS (Backend-as-a-Service): NoSQL database
 
-## Project Scope
+## :sparkler: Project Scope :sparkler:
 
 On the landing page, viewers can immediately see recipe cards. No need to dig through long-winded ad copy to locate the desired recipe. When user clicks a recipe card, they go to a detailed component page, containing ingredients and recipe details.
 
 New recipes can be added easily with a 'new recipe' component. Site viewers can see the completed cards and details to make Easy Eats recipes.
 
-[TODO: add auth routes so only subscribed users can add recipes.]
+[TODO: Add auth routes so only subscribed users can add recipes.]
 
 There will also be a search recipes component, a light and dark mode option and a colour theme picker for the site. Using the Context API and reducers to make this possible.
 
@@ -87,7 +87,7 @@ I added a default GET method to `useFetch` and created a `postData()` function t
 
 Imported the newly configured `useFetch` into the Create recipe page. Added in the functionality and tested. The configuration worked as intended.
 
-[TODO: add 'edit' ability to recipe cards]
+[TODO: Add 'edit' & 'delete' ability to recipe cards]
 
 ### `Redirect the User`
 
