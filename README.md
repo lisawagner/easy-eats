@@ -75,13 +75,13 @@ To create this, I set up a `useState` for each ingredient entered, and a `useSta
 
 The input field is then cleared, so more entries can be made by the user. For this I added a `useRef` hook to get the correct DOM element and then used a focus method on it to focus the field for better UI/UX.
 
-[BUG :bug: - Duplicates check was not case sensitive. User could add 'eggs' and 'Eggs' for example.] *Solution:* To handle the duplicates, I set the data entry field `toLowerCase()` for ingredients so that the string comparison can catch duplicates. When the list is repopulated back to the DOM, it is styled into title case for a better user experience. :muscle:
+> [BUG :bug: - Duplicates check was not case sensitive. User could add 'eggs' and 'Eggs' for example.] *Solution:* To handle the duplicates, I set the data entry field `toLowerCase()` for ingredients so that the string comparison can catch duplicates. When the list is repopulated back to the DOM, it is styled into title case for a better user experience. :muscle:
 
-Additional Feature: A list of ingredients already added placed under the input field, to make it easier for the user to preview input they already added.
+*Additional Feature:* A list of ingredients already added placed under the input field, to make it easier for the user to preview input they already added.
 
 ### `Making a POST Request`
 
-Created a `POST` request to add the new recipe information to the json file ('database'). JSON-Server allows POST methods, but required additional configuration inside the `useFetch` custom hook.
+Created a `POST` request to add the new recipe information to the json file ('database'). JSON-Server allows POST methods, but requires additional configuration inside the `useFetch` custom hook.
 
 I added a default GET method to `useFetch` and created a `postData()` function to save input within a fetch options object in JSON.stringify format. The next step was to trigger the fetch request with these options. This is because the POST fetch method here needed the options to have actual values prior to triggering.
 
@@ -113,7 +113,9 @@ Finishing Touches
 
 ### `Context API`
 
-The Context API provider offers a way to manage props without having to do prop drilling. Any component that consumes a context will re-render data anytime the context changes. *NOTE: A bit of prop drilling isn't a bad thing.* See [React Context](https://reactjs.org/docs/context.html) for details.
+The Context API provider offers a way to manage props without having to do prop drilling. Any component that consumes a context will re-render data anytime the context changes.
+
+Apply this sparingly because it makes component reuse more difficult. *A bit of prop drilling isn't a bad thing.* See [React Context](https://reactjs.org/docs/context.html) for details.
 
 ### `Creating a Context & Provider`
 Bundled a custom `<ThemeProvider>` component around the app. This is to allow the addition of custom logic. 
@@ -121,7 +123,7 @@ Bundled a custom `<ThemeProvider>` component around the app. This is to allow th
 ### `useContext`
 The `useContext` hook accepts an object and returns the current context value. When the context provider updates, this hook will trigger a re-render with the latest context value.
 
-*NOTE: the re-render will occur even if an ancestor uses React.memo or `shouldComponentUpdate`.*
+*The re-render will occur even if an ancestor uses React.memo or `shouldComponentUpdate`.*
 
 ### `Custom Context Hook`
 Created a custom `useTheme` hook to reduce the amount of code written in the components and to allow for additional functionality.
