@@ -79,7 +79,7 @@ The input field is then cleared, so more entries can be made by the user. For th
 
 *Additional Feature:* A list of ingredients already added placed under the input field, to make it easier for the user to preview input they already added.
 
-### `Making a POST Request`
+### `Make a POST Request`
 
 Created a `POST` request to add the new recipe information to the json file ('database'). JSON-Server allows POST methods, but requires additional configuration inside the `useFetch` custom hook.
 
@@ -146,3 +146,38 @@ Added some simplified dark/light mode styles by adding 'dark' selectors and css.
 
 [TODO: Consider converting dark/light mode changes better via global variables or another theme methodology.]
 
+## :fire: Firebase :fire:
+Firebase is a Backend-as-a-Service (BaaS). Built on Google's infrastructure, Firebase is a NoSQL database program. Key Features:
+    1. Authentication
+    2. Realtime database
+    3. Hosting
+    4. Test lab
+    5. Notifications
+
+The JSON-Server setup worked well for the initial phase of prototyping for Easy Eats. Firebase provides a more robust solution as the prototype grows to using my data. Additionally, Firebase simplifies the development process and works easily as a real-time database.
+
+Cost-wise, Firebase is also great when your userbase is under 10,000. Once your userbase grows beyond 10k, it's time to look at migrating to PHP/MySQL(DDOS concerns, SQL injections), Postgres or MongoDB.
+
+### `Firestore Database`
+Set up:
+  - Initialized a *test mode* database
+  - Created 'recipes' collection
+  - Seeded initial document model/schema
+
+### `Connect to Firestore`
+Connect the Frontend application with the Backend Firebase cloud database.
+  1. Install local firebase package into project
+
+### `Fetch Firestore Collection`
+
+### `Fetch Firestore Document`
+
+### `Add Firestore Document`
+
+### `Delete Documents`
+
+### `Realtime Collection Data`
+
+### `Update Documents`
+
+### `Realtime Document Data`
