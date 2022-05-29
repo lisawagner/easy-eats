@@ -6,7 +6,8 @@ Concept site: Home cooking, easy and quick recipes.
 
 - React 18
 - React Router 6
-- JSON Server (initial dev server)
+- JSON Server: Initial dev server
+- Google Firebase BaaS (Backend-as-a-Service): NoSQL database
 
 ## Project Scope
 
