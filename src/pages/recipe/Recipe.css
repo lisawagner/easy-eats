@@ -8,7 +8,7 @@
   margin: 20px;
   /* text-align: center; */
   /* background: #fff; */
-  background: #faebd7;
+  background: var(--secondary-white);
   padding: 20px;
   box-sizing: border-box;
   border-radius: 4px;
@@ -45,21 +45,27 @@
 /* horizontal lines */
 .recipe .pattern {
   padding: 10px;
-	background-image: repeating-linear-gradient(antiquewhite 0px, antiquewhite 35px, teal 36px);
+	background-image: repeating-linear-gradient(var(--secondary-white) 0px, var(--secondary-white) 35px, teal 36px);
 }
 .recipe.vintageFx {
   box-shadow:0px 0px 20px 0px rgba(0,0,0,0.4), inset 0px 0px 14px 2px #422407;
   z-index: 9;
 }
 
+/* DARKMODE */
+.recipe.dark {
+  background: var(--primary-white);
+}
+.recipe .pattern.dark {
+	background-image: repeating-linear-gradient(var(--primary-white) 0px, var(--primary-white) 35px, teal 36px);
+}
 
+/* MEDIA QUERIES */
 
 @media (min-width: 1024px) {
   .recipe {
-    margin: 30px;
-    
+    margin: 30px; 
   }
-  
 }
 
 @media (min-width: 1248px) {

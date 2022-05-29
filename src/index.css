@@ -9,6 +9,11 @@
 /* background pattern attribution */
 /* <a href="https://www.wowpatterns.com/free-vector/sunflower-vector-seamless-pattern">Wow Patterns</a> */
 
+:root {
+  --primary-white: antiquewhite;;
+  --secondary-white: #fcf3e7;
+}
+
 /* base styles */
 html, body, #root {
   height: 100%;

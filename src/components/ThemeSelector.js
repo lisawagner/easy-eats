@@ -5,7 +5,7 @@ import './ThemeSelector.css'
 import ToggleMode from './ToggleMode'
 
 // temporary theme colours array
-const themeColors = ['#851616', '#008080', '#ff7f50', '#455769']
+const themeColors = ['#6f1212', '#006767', '#4e0027', '#8f5911']
 
 export default function ThemeSelector() {
   const { changeColor } = useTheme()

@@ -14,7 +14,7 @@ export default function ToggleMode() {
   return (
     <div className='toggler'>
       {/* <label className="switch" style={{ background: color }} > */}
-      <label className="switch" style={{ background: mode === 'dark' ? 'antiquewhite' : color }} >
+      <label className="switch" style={{ background: mode === 'dark' ? 'var(--primary-white)' : color }} >
       {/* <label className="switch" > */}
         <div className="names">
           <p className="light">

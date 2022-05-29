@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
+import { useTheme } from '../hooks/useTheme'
 // styles
 import './RecipeList.css'
 
 export default function RecipeList({ recipes }) {
+  const { color, mode } = useTheme()
+
   // If array empty, return this template
   if(recipes.length === 0) {
     return <div className='error' >No recipes to load...</div>
@@ -12,9 +15,9 @@ export default function RecipeList({ recipes }) {
     <div className='recipe-list'>
       {/* we already have the recipes sent in from homepage props, so we don't need to do the recipes && check before mapping*/}
       {recipes.map(recipe => (
-        <div key={recipe.id} className='card vintageFx' >
+        <div key={recipe.id} className={`card vintageFx ${mode}`} >
           {/* <div className='vintageFx'> */}
-            <div className="pattern">
+            <div className={`pattern ${mode}`}>
               
                 <h3>{recipe.title}</h3>
                 <p>{recipe.cookingTime} to make</p>
@@ -23,6 +26,7 @@ export default function RecipeList({ recipes }) {
                 <Link
                   to={`/recipes/${recipe.id}`}
                   className='ribbon ribbon-top-right'
+                  
                   >
                     <span>Make it!</span>
                   </Link>

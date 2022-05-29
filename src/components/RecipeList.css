@@ -9,7 +9,7 @@
 }
 .recipe-list .card {
   /* background: #fff; */
-  background: antiquewhite;
+  background: var(--secondary-white);
   color: #333;
   padding: 20px;
   border-radius: 4px;
@@ -89,30 +89,26 @@
   transform: rotate(45deg);
 }
 
-
-/* .recipe-list .card a {
-  color: #555;
-  text-decoration: none;
-  display: block;
-  background: #e2e2e2;
-  width: 100px;
-  text-align: center;
-  width: 120px;
-  padding: 8px;
-  border-radius: 4px;
-  margin: 20px auto 0;
-} */
-
-
 .recipe-list .pattern {  
 	height: 80%;  
   /* padding-right: 3px; */
-	background-image: repeating-linear-gradient(antiquewhite 0px, antiquewhite 34px, teal 35px);
+	background-image: repeating-linear-gradient(var(--secondary-white) 0px, var(--secondary-white) 34px, teal 35px);
 }
 .recipe-list .vintageFx {
   box-shadow:0px 0px 12px 0px rgba(0,0,0,0.4), inset 0px 0px 10px 3px #422407;
   /* border-radius: 4px; */
 }
+
+/* DARK MODE */
+.recipe-list .card.dark {
+  background: var(--primary-white);
+}
+
+.recipe-list .pattern.dark {
+  background-image: repeating-linear-gradient(var(--primary-white) 0px, var(--primary-white) 34px, teal 35px);
+}
+
+/* MEDIA QUERIES */
 
 @media (min-width: 768px) {
   .recipe-list {

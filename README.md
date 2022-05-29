@@ -132,4 +132,7 @@ Added color theme selector button and swatches component.
 Chose mode icons from google fonts icons and downloaded the svgs. In the themeContext I added a default mode and then created a `ToggleMode` component.
 
 ### `Light & Dark Mode Styles`
+Added some simplified dark/light mode styles by adding 'dark' selectors and css. 
+
+[TODO: Consider converting dark/light mode changes better via global variables or another theme methodology.]
 
