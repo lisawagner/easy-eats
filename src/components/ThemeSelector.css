@@ -1,12 +1,13 @@
+.theme-select-wrap {
+  margin: 1em;
+}
 .theme-selector {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   max-width: 1000px;
-  margin: 40px auto;
-  z-index: 9999;
+  margin: 20px auto;
 }
-
 .theme-buttons div {
   display: inline-block;
   width: 20px;
@@ -16,3 +17,4 @@
   border-radius: 50%;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.8);
 }
+
