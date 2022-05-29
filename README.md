@@ -67,7 +67,7 @@ Built out the recipe details on the Recipe page. Mapped over the ingredients lis
 
 Form for Creating Recipes: Created 3 different states for 3 different pieces of data (title, instructions and cooking time) using `<useState>` hook. Tested form functionality in the console and added some basic styles.
 
-### `Adding Ingredients Field`
+### `Add Ingredients Field`
 
 Here, the user needs to be able to add multiple items, which then need to go into an ingredients array, so coding this process was more involved.
 
