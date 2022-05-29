@@ -21,9 +21,9 @@ Concept site: Home cooking, easy and quick recipes.
 
 On the landing page, viewers can immediately see recipe cards. No need to dig through long-winded ad copy to locate the desired recipe. When user clicks a recipe card, they go to a detailed component page, containing ingredients and recipe details.
 
-New recipes can be added easily with a 'new recipe' component. Site viewers can see the completed cards and details to make Easy Eats recipes,[TODO: - add login req'd for adding new recipes.]
+New recipes can be added easily with a 'new recipe' component. Site viewers can see the completed cards and details to make Easy Eats recipes.
 
-[Todo: add auth routes so only subscribed users can add recipes.]
+[TODO: add auth routes so only subscribed users can add recipes.]
 
 There will also be a search recipes component, a light and dark mode option and a colour theme picker for the site. Using the Context API and reducers to make this possible.
 
@@ -33,7 +33,7 @@ Initial recipe data will be saved in a db.json file, for seeding a database late
 
 Site pages folder structured to keep pages with multiple components per page all in one folder, along with their style sheets.
 
-React-router-dom v6 installed and base routes set up and tested.
+React-router-dom v6 installed and base routes set up and tested. :heavy_check_mark:
 
 ### `Navbar Component`
 
@@ -45,7 +45,7 @@ Navbar component scaffolding set up as a separate component as it will be used o
 
 Fetching recipe data using the `useFetch` custom hook I previously created for working on differect projects.
 
-Added the hook and tested successfully mapping data to the homepage.
+Added the hook and tested successfully mapping data to the homepage. :heavy_check_mark:
 
 ### `Recipe List Component`
 
@@ -53,7 +53,7 @@ Made a separate component to list out all recipes and nested this component on t
 1. To keep the homepage component leaner and more modular
 2. In order to re-use the recipe component elsewhere in the future
 
-Added the component and tested. While testing found and fixed a routing error. `<RecipeList>` component now works as intended.
+Added the component and tested. While testing found and fixed a routing error. `<RecipeList>` component now works as intended. :heavy_check_mark:
 
 ### `Fetch Single Recipe`
 
@@ -75,7 +75,7 @@ To create this, I set up a `useState` for each ingredient entered, and a `useSta
 
 The input field is then cleared, so more entries can be made by the user. For this I added a `useRef` hook to get the correct DOM element and then used a focus method on it to focus the field for better UI/UX.
 
-[BUG - Duplicates check was not case sensitive. User could add 'eggs' and 'Eggs' for example.] *Solution:* To handle the duplicates, I set the data entry field `toLowerCase()` for the ingredients so that the string comparison can easily catch duplicates. When the list is repopulated back to the DOM, it is  styled into title case for a better user experience.
+[BUG :bug: - Duplicates check was not case sensitive. User could add 'eggs' and 'Eggs' for example.] *Solution:* To handle the duplicates, I set the data entry field `toLowerCase()` for the ingredients so that the string comparison can easily catch duplicates. When the list is repopulated back to the DOM, it is  styled into title case for a better user experience.
 
 Additional Feature: A list of ingredients already added placed under the input field, to make it easier for the user to preview input they already added.
 
