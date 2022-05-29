@@ -1,4 +1,4 @@
-# Easy Eats - Simple Recipe App
+# Easy Eats - :sparkles: Simple Recipe App :sparkles:
 
 Concept site: Home cooking, easy and quick recipes.
 
@@ -75,7 +75,7 @@ To create this, I set up a `useState` for each ingredient entered, and a `useSta
 
 The input field is then cleared, so more entries can be made by the user. For this I added a `useRef` hook to get the correct DOM element and then used a focus method on it to focus the field for better UI/UX.
 
-[BUG :bug: - Duplicates check was not case sensitive. User could add 'eggs' and 'Eggs' for example.] *Solution:* To handle the duplicates, I set the data entry field `toLowerCase()` for the ingredients so that the string comparison can easily catch duplicates. When the list is repopulated back to the DOM, it is  styled into title case for a better user experience.
+[BUG :bug: - Duplicates check was not case sensitive. User could add 'eggs' and 'Eggs' for example.] *Solution:* To handle the duplicates, I set the data entry field `toLowerCase()` for ingredients so that the string comparison can catch duplicates. When the list is repopulated back to the DOM, it is styled into title case for a better user experience. :muscle:
 
 Additional Feature: A list of ingredients already added placed under the input field, to make it easier for the user to preview input they already added.
 
@@ -106,7 +106,7 @@ For the Search results page, I used `useLocation()` from react-router-dom and `U
 ### `Finishing Touches + TODOs`
 
 Finishing Touches
-- Added a test for empty arrays in the SearchList that returns an indicator when there are no recipes matching the specific search query.
+- Added a test for empty arrays in the SearchList that returns an indicator when there are no recipes matching the specific search query. :heavy_check_mark:
 - ~~TODO: Add light and dark mode selector~~ :heavy_check_mark:
 - ~~TODO: Add theme change selectors~~ :heavy_check_mark:
 - TODO: Clear search item from search bar after search complete
