@@ -128,7 +128,8 @@ Added color theme selector button and swatches component.
 
 [TODO: build out theme arrays with primary color, secondary, etc and with different background patterns and font choices]
 
-
 ### `Light & Dark Modes`
+Chose mode icons from google fonts icons and downloaded the svgs. In the themeContext I added a default mode and then created a `ToggleMode` component.
 
 ### `Light & Dark Mode Styles`
+

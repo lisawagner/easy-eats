@@ -2,4 +2,11 @@
 
 .App {
   min-height: 100%;
+  background: url(./assets/backgrounds/sunflower_1.png);
+  background-size: 25%, 25%;
+}
+.App.dark {
+  /* background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url(./assets/backgrounds/sunflower_1.png); */
+  background: url(./assets/backgrounds/burgundy-sunflower.png);
+  background-size: 25%, 25%;
 }
