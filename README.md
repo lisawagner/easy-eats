@@ -108,41 +108,36 @@ For the Search results page, I used `useLocation()` from react-router-dom and `U
 Finishing Touches
 - Added a test for empty arrays in the SearchList that returns an indicator when there are no recipes matching the specific search query.
 - ~~TODO: Add light and dark mode selector~~ :heavy_check_mark:
-- ~~TODO: Add theme changer selectors~~ :heavy_check_mark:
+- ~~TODO: Add theme change selectors~~ :heavy_check_mark:
 - TODO: Clear search item from search bar after search complete
 
 ### `Context API`
 
-The Context API provider offers a way to manage props without having to do prop drilling. Just because we can use this global state, doesn't mean we always should. Using alot of global state can lead to unneccessary re-renders.
-
-Any component that consumes a context will re-render anytime data in that context changes. A bit of prop drilling isn't a bad thing.
+The Context API provider offers a way to manage props without having to do prop drilling. Any component that consumes a context will re-render data anytime the context changes. A bit of prop drilling isn't a bad thing.
 
 ### `Creating a Context & Provider`
- Bundled custom <ThemeProvider> around the app. This is to allow the addition of custom logic. 
+Bundled a custom `<ThemeProvider>` component around the app. This is to allow the addition of custom logic. 
 
 ### `useContext`
-The `useContext` hook accepts an object and returns the current context value for that context. When the context provider updates, this hook will trigger a r-erender with the latest context value.
+The `useContext` hook accepts an object and returns the current context value. When the context provider updates, this hook will trigger a re-render with the latest context value.
 
-The re-render will occur even if an ancestor uses React.memo or `shouldComponentUpdate`.
+*NOTE: the re-render will occur even if an ancestor uses React.memo or `shouldComponentUpdate`.*
 
 ### `Custom Context Hook`
 Created a custom `useTheme` hook to reduce the amount of code written in the components and to allow for additional functionality.
 
 ### `Reducers and useReducer`
+When working with context and complex states, a reducer is a good option. It is a single function that encapsulates all the logic needed to update state values in multiple ways.
 
-When working with context and complex states and different ways of updating states, a reducer is a good option. It is a function that makes it easier to work with multiple bits of related state that can be updated in different ways.
-
-As logic becomes more complex, reducers are also a great option. It is a single function that encapsulates all the logic we need to update state values in multiple ways.
-
-Tested out useReducer by building a simple colour change state reducer.
+Tested out `useReducer` by building a simple colour change state reducer. :heavy_check_mark:
 
 ### `Theme Color Selector`
-Added color theme selector button and swatches component.
+Added color theme selector button and swatches component. :heavy_check_mark:
 
 [TODO: build out theme arrays with primary color, secondary, etc and with different background patterns and font choices]
 
 ### `Light & Dark Modes`
-Chose mode icons from google fonts icons and downloaded the svgs. In the themeContext I added a default mode and then created a `ToggleMode` component.
+Chose mode icons from google fonts icons and downloaded the svgs. In the `themeContext` I added a default mode and then created a `ToggleMode` component.
 
 ### `Light & Dark Mode Styles`
 Added some simplified dark/light mode styles by adding 'dark' selectors and css. 
