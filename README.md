@@ -49,9 +49,9 @@ Added the hook and tested successfully mapping data to the homepage. :heavy_chec
 
 ### `Recipe List Component`
 
-Made a separate component to list out all recipes and nested this component on the homepage. I  sett up the `<RecipeList>` component this way for 2 reasons:
+Made a separate component to list out all recipes and nested this component on the homepage. I  set up the `<RecipeList>` component this way for 2 reasons:
 1. To keep the homepage component leaner and more modular
-2. In order to re-use the recipe component elsewhere in the future
+2. In order to re-use the recipe component elsewhere in the app
 
 Added the component and tested. While testing found and fixed a routing error. `<RecipeList>` component now works as intended. :heavy_check_mark:
 
@@ -69,7 +69,7 @@ Form for Creating Recipes: Created 3 different states for 3 different pieces of 
 
 ### `Adding Ingredients Field`
 
-Here, the user needs to be able to add multiple items, which then need to go into an ingredients array, so coding this process is more involved.
+Here, the user needs to be able to add multiple items, which then need to go into an ingredients array, so coding this process was more involved.
 
 To create this, I set up a `useState` for each ingredient entered, and a `useState` array to hold all the ingredients values. Once the user enters an ingredient, a quick check for duplicates runs and then the new (non-duplicate) ingredient is added to the array along with any previous ingredients, if applicable.
 
@@ -81,7 +81,7 @@ Additional Feature: A list of ingredients already added placed under the input f
 
 ### `Making a POST Request`
 
-Created a `POST` request to add the new recipe information to the json file ('database'). JSON-Server allows POST methods, but requires additional configuration inside the `useFetch` custom hook.
+Created a `POST` request to add the new recipe information to the json file ('database'). JSON-Server allows POST methods, but required additional configuration inside the `useFetch` custom hook.
 
 I added a default GET method to `useFetch` and created a `postData()` function to save input within a fetch options object in JSON.stringify format. The next step was to trigger the fetch request with these options. This is because the POST fetch method here needed the options to have actual values prior to triggering.
 
@@ -113,7 +113,7 @@ Finishing Touches
 
 ### `Context API`
 
-The Context API provider offers a way to manage props without having to do prop drilling. Any component that consumes a context will re-render data anytime the context changes. A bit of prop drilling isn't a bad thing.
+The Context API provider offers a way to manage props without having to do prop drilling. Any component that consumes a context will re-render data anytime the context changes. *NOTE: A bit of prop drilling isn't a bad thing.* See [React Context](https://reactjs.org/docs/context.html) for details.
 
 ### `Creating a Context & Provider`
 Bundled a custom `<ThemeProvider>` component around the app. This is to allow the addition of custom logic. 
