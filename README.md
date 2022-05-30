@@ -7,7 +7,7 @@ Concept site: Home cooking, easy and quick recipes.
 - Dark and light mode toggle :heavy_check_mark:
 - Theme selector buttons :heavy_check_mark:
 - Search recipes component :heavy_check_mark:
-- Add recipes ability (CRUD - once the edit & delete set up)
+- Basic CRUD functionality. Create recipes, read, delete, and update recipes set up. :heavy_check_mark:
 - Custom hooks: `useFetch` for GET & POST data, `useTheme` for theme context :heavy_check_mark:
 
 ### Technology
