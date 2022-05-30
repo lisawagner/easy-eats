@@ -172,20 +172,29 @@ Connect the Frontend application with the Backend Firebase cloud database.
 ### `Fetch Firestore Collection`
 Remove the local json-server database references and replace with Cloud Firebase. Successfully fetched the firestore recipes collection from the cloud to the frontend Homepage.
 
-[TODO: Create a new useFetch custom hook for fetching data from Firebase]
-[TODO: Update UI to titlecase for the results from 'title' and 'cookingTime']
+~~[TODO: Update UI to titlecase for the results from 'title']~~ :heavy_check_mark:
 
 ### `Fetch a Firestore Document`
 Single documents fetched via `{ doc, getDoc }` to get results from firestore collection based on single doc id.
 
 ### `Add Firestore Document`
-Creating a new recipe is very easy with Firestore. You can use `async await` so it is no longer necessary to have useEffect check the data before redirecting the user to the home page.
-
+Creating a new recipe is very easy with Firestore. You can use `async await` so it is no longer necessary to have `useEffect` check the data before redirecting the user to the home page.
 
 ### `Delete Documents`
+Added a delete icon from google icons and coded in basic funtionality using `deleteDoc` from Firestore/Firebase :heavy_check_mark:
 
 ### `Realtime Collection Data`
+To improve user experience with the delete process, I added in realtime functionality with `onSnapshot`. The basic delete function didn't refresh the UI, so the user could still see the deleted recipe, even though it was removed from the database.
+
+Using `onSnapshot` created a need for a clean up function in `useEffect`. I added an `unsubscribe` and returned the unsubscribe function to unmount the `onSnapshot` listener when the user leaves the page.
 
 ### `Update Documents`
+Successfully updated the title using the `updateDoc()` function from firebase. :heavy_check_mark:
 
 ### `Realtime Document Data`
+Same issue occured with updating as with deleting documents. It needed realtime functionality added to refresh the UI and an unsubscribe to unmount the listener.
+
+### `TODO's`
+  1. Build out the update/edit UI and its functionality
+  2. Create a useCollection custom hook
+  3. User authorization
