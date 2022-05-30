@@ -26,7 +26,7 @@ export default function Home() {
       } else {
         let results = []
         snapshot.docs.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data()}`)
+        // console.log(`${doc.id} => ${doc.data()}`)
         results.push({id: doc.id, ...doc.data()})
       })
       setData(results)

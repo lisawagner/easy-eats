@@ -176,9 +176,11 @@ Remove the local json-server database references and replace with Cloud Firebase
 [TODO: Update UI to titlecase for the results from 'title' and 'cookingTime']
 
 ### `Fetch a Firestore Document`
-Single documents fetch
+Single documents fetched via `{ doc, getDoc }` to get results from firestore collection based on single doc id.
 
 ### `Add Firestore Document`
+Creating a new recipe is very easy with Firestore. You can use `async await` so it is no longer necessary to have useEffect check the data before redirecting the user to the home page.
+
 
 ### `Delete Documents`
 

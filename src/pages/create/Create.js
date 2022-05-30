@@ -1,7 +1,9 @@
-import { useRef, useState, useEffect } from 'react'
-import { useFetch } from '../../hooks/useFetch'
+import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTheme } from '../../hooks/useTheme'
+
+import { db } from '../../firebase/config'
+import { addDoc, collection } from 'firebase/firestore'
 
 // styles
 import './Create.css'
@@ -16,25 +18,20 @@ export default function Create() {
   const ingredientInput = useRef(null)
   const history = useNavigate()
   const { color, mode } = useTheme()
+  const docRef = collection(db, 'recipes')
 
-  // api endpoint - since "GET" is default, we pass in "POST" to use it instead
-  const { postData, data, error } = useFetch('http://localhost:3000/recipes', 'POST')
-
-  // redirect to home page if we have a data response
-  useEffect(() => {
-    if (data) {
-      setTimeout(() => {
-        history('/')
-      }, 2000)
-    } 
-  }, [data, history])
-
-  const handleSubmit = (e) => {
-    // pervent default of page resubmitting
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(title, instructions, cookingTime, ingredients);
-    // note: JSON server automatically adds a unique ID when you pass in new data
-    postData({ title, ingredients, instructions, cookingTime: cookingTime + ' minutes' })
+    
+    const recipe = { title, ingredients, instructions, cookingTime: cookingTime + ' minutes' }
+
+    try {
+      await addDoc(docRef, recipe)
+      history('/')
+    } catch (error) {
+      console.log(error);
+    }
+    
   }
 
   const handleAdd = (e) => {
@@ -76,7 +73,6 @@ export default function Create() {
             <input
               type="text"
               // grab the input value
-              // onChange={(e) => setNewIngredient(e.target.value.toLowerCase())}
               onChange={(e) => setNewIngredient(e.target.value)}
               value={newIngredient}
               ref={ingredientInput}

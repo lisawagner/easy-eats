@@ -13,8 +13,6 @@ import './Recipe.css'
 export default function Recipe() {
   const { id } = useParams()
   const { mode } = useTheme()
-    // const URL = 'http://localhost:3000/recipes/' + id
-  // const { data: recipe, isPending, error } = useFetch(URL)
 
   const [recipe, setRecipe] = useState(null)
   const [isPending, setIsPending] = useState(false)
