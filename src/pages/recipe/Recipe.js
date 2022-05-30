@@ -1,10 +1,9 @@
-// import { useFetch } from '../../hooks/useFetch'
 import { useParams } from 'react-router-dom'
 import { useTheme } from '../../hooks/useTheme'
 import { useState, useEffect } from 'react'
 
 import { db } from '../../firebase/config'
-import { doc, getDoc } from 'firebase/firestore'
+import { doc, getDoc, updateDoc, onSnapshot } from 'firebase/firestore'
 
 // styles
 import './Recipe.css'
@@ -22,8 +21,8 @@ export default function Recipe() {
     const docRef = doc(db, 'recipes', id)
     setIsPending(true)
 
-    getDoc(docRef).then((doc) => {
-      // console.log(doc.data(), doc.id);
+    // realtime data
+    const unsub = onSnapshot(docRef, (doc) => {
       if (doc.exists) {
         setIsPending(false)
         setRecipe(doc.data())
@@ -33,7 +32,18 @@ export default function Recipe() {
       }
     })
 
+    return () => unsub()
+
   }, [id])
+
+  const handleUpdate = () => {
+    const docRef = doc(db, 'recipes', id)
+    // Silly Title
+    // Scrambler
+    updateDoc(docRef, {
+      title: 'Scrambler'
+    })
+  }
 
   return (
     <div className="recipe-container">
@@ -52,6 +62,7 @@ export default function Recipe() {
                   ))}
                 </ul>
                 <p className='instructions' >{recipe.instructions}</p>
+                <button onClick={handleUpdate}>Update me</button>
               </>
             )}
           </div>
@@ -60,3 +71,13 @@ export default function Recipe() {
     </div>
   )
 }
+
+// getDoc(docRef).then((doc) => {
+//   if (doc.exists) {
+//     setIsPending(false)
+//     setRecipe(doc.data())
+//   } else {
+//     setError('Sorry, there are no recipes to load at the moment')
+//     setIsPending(false)
+//   }
+// })

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import { db } from '../../firebase/config'
-import { collection, getDocs } from 'firebase/firestore'
+import { collection, onSnapshot } from 'firebase/firestore'
 
 // components
 import RecipeList from '../../components/RecipeList'
@@ -18,8 +18,8 @@ export default function Home() {
     const ref = collection (db, 'recipes')
     setIsPending(true)
 
-    getDocs(ref).then((snapshot) => {
-
+    // real time collection data
+    const unsubscribe = onSnapshot(ref, (snapshot) => {
       if (snapshot.empty) {
         setError('Sorry, there are no recipes to load at the moment')
         setIsPending(false)
@@ -28,35 +28,17 @@ export default function Home() {
         snapshot.docs.forEach((doc) => {
         // console.log(`${doc.id} => ${doc.data()}`)
         results.push({id: doc.id, ...doc.data()})
-      })
-      setData(results)
-      setIsPending(false)
+        })
+        setData(results)
+        setIsPending(false)
       }
-    }).catch((err) => {
+    }, (err) => {
       setError(err.message)
       setIsPending(false)
     })
 
-    // db.collection('recipes').get().then((snapshot) => {
-    //   console.log(snapshot)
-    //   if (snapshot.empty) {
-    //     setError('No recipes to load')
-    //     setIsPending(false)
-    //   } else {
-    //     let results = []
-    //     snapshot.docs.forEach(doc => {
-    //       // console.log(doc)
-    //       results.push({ ...doc.data(), id: doc.id })
-    //     })
-    //     setData(results)
-    //     setIsPending(false)
-    //   }
-    // }).catch(err => {
-    //   setError(err.message)
-    //   setIsPending(false)
-    // })
-
-
+    return () => unsubscribe()
+    
   }, [])
 
   return (
@@ -71,3 +53,20 @@ export default function Home() {
     </div>
   )
 }
+
+    // getDocs(ref).then((snapshot) => {
+    //   if (snapshot.empty) {
+    //     setError('Sorry, there are no recipes to load at the moment')
+    //     setIsPending(false)
+    //   } else {
+    //     let results = []
+    //     snapshot.docs.forEach((doc) => {
+    //     results.push({id: doc.id, ...doc.data()})
+    //   })
+    //   setData(results)
+    //   setIsPending(false)
+    //   }
+    // })
+    // .catch((error) => {
+    //   console.log(error);
+    // })

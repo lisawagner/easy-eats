@@ -36,7 +36,15 @@
   margin: 20px 0;
   line-height: 1.5em;
 }
+.delete {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  cursor: pointer;
+  filter: invert(50%);
+}
 
+/* PRETTY RIBBON */
 .ribbon {
   width: 150px;
   height: 150px;
