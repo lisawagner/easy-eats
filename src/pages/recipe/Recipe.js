@@ -3,11 +3,10 @@ import { useTheme } from '../../hooks/useTheme'
 import { useState, useEffect } from 'react'
 
 import { db } from '../../firebase/config'
-import { doc, getDoc, updateDoc, onSnapshot } from 'firebase/firestore'
+import { doc, updateDoc, onSnapshot } from 'firebase/firestore'
 
 // styles
 import './Recipe.css'
-
 
 export default function Recipe() {
   const { id } = useParams()
@@ -41,13 +40,12 @@ export default function Recipe() {
     // Silly Title
     // Scrambler
     updateDoc(docRef, {
-      title: 'Scrambler'
+      title: 'Silly Title'
     })
   }
 
   return (
     <div className="recipe-container">
-      {/* className={`card vintageFx ${mode}`} */}
         <div className={`recipe vintageFx ${mode}`}>
           <div className={`pattern ${mode}`}>
             {error && <p className='error' >{error}</p>}
@@ -66,18 +64,8 @@ export default function Recipe() {
               </>
             )}
           </div>
-        </div>
-   
+        </div> 
     </div>
   )
 }
 
-// getDoc(docRef).then((doc) => {
-//   if (doc.exists) {
-//     setIsPending(false)
-//     setRecipe(doc.data())
-//   } else {
-//     setError('Sorry, there are no recipes to load at the moment')
-//     setIsPending(false)
-//   }
-// })

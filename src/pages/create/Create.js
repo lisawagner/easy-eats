@@ -8,7 +8,6 @@ import { addDoc, collection } from 'firebase/firestore'
 // styles
 import './Create.css'
 
-
 export default function Create() {
   const [title, setTitle] = useState('')
   const [instructions, setInstructions] = useState('')
@@ -40,7 +39,7 @@ export default function Create() {
 
     // duplicates check
     if(ing && !ingredients.includes(ing)) {
-      // take prev ingredients and create a new array with both the prev ingredients and the new ingredients(ing) in it.
+      // take prev ingredients and create a new array with both the prev and new ingredients(ing) in it.
       setIngredients(prevIngredients => [...prevIngredients, ing])
       // clear input field so that it is ready for another ingredient
       setNewIngredient('')

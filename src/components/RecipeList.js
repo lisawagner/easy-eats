@@ -23,7 +23,7 @@ export default function RecipeList({ recipes }) {
 
   return (
     <div className='recipe-list'>
-      {/* we already have the recipes sent in from homepage props, so we don't need to do the recipes && check before mapping*/}
+      {/* The recipes are already sent in from homepage props, so no need to do the recipes && check before mapping*/}
       {recipes.map(recipe => (
         <div key={recipe.id} className={`card vintageFx ${mode}`} >
             <div className={`pattern ${mode}`}>

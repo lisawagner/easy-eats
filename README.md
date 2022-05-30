@@ -198,3 +198,4 @@ Same issue occured with updating as with deleting documents. It needed realtime 
   1. Build out the update/edit UI and its functionality
   2. Create a useCollection custom hook
   3. User authorization
+  4. Adjust delete button appearance
