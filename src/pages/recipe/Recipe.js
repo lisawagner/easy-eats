@@ -1,6 +1,10 @@
-import { useFetch } from '../../hooks/useFetch'
+// import { useFetch } from '../../hooks/useFetch'
 import { useParams } from 'react-router-dom'
 import { useTheme } from '../../hooks/useTheme'
+import { useState, useEffect } from 'react'
+
+import { db } from '../../firebase/config'
+import { doc, getDoc } from 'firebase/firestore'
 
 // styles
 import './Recipe.css'
@@ -8,9 +12,30 @@ import './Recipe.css'
 
 export default function Recipe() {
   const { id } = useParams()
-  const URL = 'http://localhost:3000/recipes/' + id
-  const { data: recipe, isPending, error } = useFetch(URL)
   const { mode } = useTheme()
+    // const URL = 'http://localhost:3000/recipes/' + id
+  // const { data: recipe, isPending, error } = useFetch(URL)
+
+  const [recipe, setRecipe] = useState(null)
+  const [isPending, setIsPending] = useState(false)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    const docRef = doc(db, 'recipes', id)
+    setIsPending(true)
+
+    getDoc(docRef).then((doc) => {
+      // console.log(doc.data(), doc.id);
+      if (doc.exists) {
+        setIsPending(false)
+        setRecipe(doc.data())
+      } else {
+        setError('Sorry, there are no recipes to load at the moment')
+        setIsPending(false)
+      }
+    })
+
+  }, [id])
 
   return (
     <div className="recipe-container">
@@ -25,7 +50,7 @@ export default function Recipe() {
                 <p className='cook-time'>Takes {recipe.cookingTime} to cook.</p>
                 <ul>
                   {recipe.ingredients.map( (ingredient) => (
-                    <li key={ingredient}>{ingredient}</li>
+                    <li className='title-case' key={ingredient}>{ingredient}</li>
                   ))}
                 </ul>
                 <p className='instructions' >{recipe.instructions}</p>

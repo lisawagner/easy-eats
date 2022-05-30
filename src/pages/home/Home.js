@@ -19,7 +19,6 @@ export default function Home() {
     setIsPending(true)
 
     getDocs(ref).then((snapshot) => {
-      console.log("snapshot: " + snapshot);
 
       if (snapshot.empty) {
         setError('Sorry, there are no recipes to load at the moment')
@@ -27,7 +26,7 @@ export default function Home() {
       } else {
         let results = []
         snapshot.docs.forEach((doc) => {
-        console.log(doc)
+        console.log(`${doc.id} => ${doc.data()}`)
         results.push({id: doc.id, ...doc.data()})
       })
       setData(results)

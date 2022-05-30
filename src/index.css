@@ -56,6 +56,10 @@ input, textarea {
   /* margin: 10px auto; */
   color: #333;
   font-size: 2em;
+  text-transform: capitalize;
+}
+.title-case {
+  text-transform: capitalize;
 }
 .loading, .error {
   text-align: center;

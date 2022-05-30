@@ -175,8 +175,8 @@ Remove the local json-server database references and replace with Cloud Firebase
 [TODO: Create a new useFetch custom hook for fetching data from Firebase]
 [TODO: Update UI to titlecase for the results from 'title' and 'cookingTime']
 
-### `Fetch Firestore Document`
-
+### `Fetch a Firestore Document`
+Single documents fetch
 
 ### `Add Firestore Document`
 

@@ -19,7 +19,7 @@ export default function RecipeList({ recipes }) {
           {/* <div className='vintageFx'> */}
             <div className={`pattern ${mode}`}>
               
-                <h3>{recipe.title}</h3>
+                <h3 className='title-case'>{recipe.title}</h3>
                 <p>{recipe.cookingTime} to make</p>
                 {/* add snippet substring to grab characters from zero to 100*/}
                 <div>{recipe.instructions.substring(0, 100)}...</div>

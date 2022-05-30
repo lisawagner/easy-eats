@@ -42,7 +42,7 @@ export const useFetch = (url, method = "GET") => {
           console.log("the fetch was aborted")
         } else {
           setIsPending(false)
-          setError('Could not fetch the data')
+          setError('Could not fetch the data from JSON-Server')
         }
       }
     } // <--- .end fetchData
